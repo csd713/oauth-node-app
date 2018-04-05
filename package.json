@@ -1,0 +1,24 @@
+{
+  "name": "oauth-node-app",
+  "version": "1.0.0",
+  "description": "Node.js Web-App to explore OAuth",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csd713/oauth-node-app.git"
+  },
+  "author": "Chiranjeevi SD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csd713/oauth-node-app/issues"
+  },
+  "homepage": "https://github.com/csd713/oauth-node-app#readme",
+  "dependencies": {
+    "ejs": "^2.5.8",
+    "express": "^4.16.3"
+  }
+}
