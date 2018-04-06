@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const authRoutes = require('./routes/auth-routes');
+const passportSetup = require('./config/passport-setup');
 
 //setup route for /auth/*
 app.use('/auth', authRoutes);
