@@ -4,6 +4,14 @@ const express = require('express');
 const app = express();
 const authRoutes = require('./routes/auth-routes');
 const passportSetup = require('./config/passport-setup');
+const mongoose = require('mongoose');
+const keys = require('./config/keys');
+
+//connect to mongoDb
+const MONGODB_URI = keys.mongoDb.dbURI || 'mongodb://localhost/bookstore';
+mongoose.connect(MONGODB_URI, () => {
+  console.log('Connected to MongoDB :)');
+});
 
 //setup route for /auth/*
 app.use('/auth', authRoutes);
