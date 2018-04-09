@@ -6,6 +6,18 @@ const authRoutes = require('./routes/auth-routes');
 const passportSetup = require('./config/passport-setup');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
+
+//always follow the order in which cookie and sessions are intialized
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 * 1000, //1day in milli second
+  keys: [keys.session.cookieKey]
+}));
+
+//initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 //connect to mongoDb
 const MONGODB_URI = keys.mongoDb.dbURI || 'mongodb://localhost/bookstore';
