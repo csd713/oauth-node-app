@@ -38,7 +38,9 @@ app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
 app.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', {
+    user: req.user
+  }); 
 });
 
 app.listen(3000, () => {
