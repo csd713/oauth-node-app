@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const express = require('express');
 const app = express();
@@ -8,6 +8,8 @@ const mongoose = require('mongoose');
 const keys = require('./config/keys');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
+const profileRoutes = require('./routes/profile-routes');
+
 
 //always follow the order in which cookie and sessions are intialized
 app.use(cookieSession({
@@ -27,6 +29,9 @@ mongoose.connect(MONGODB_URI, () => {
 
 //setup route for /auth/*
 app.use('/auth', authRoutes);
+
+//setup route for /profile/*
+app.use('/profile', profileRoutes);
 
 //setup view engine
 app.set('view engine', 'ejs');

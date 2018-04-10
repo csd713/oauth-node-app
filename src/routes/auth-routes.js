@@ -1,3 +1,5 @@
+'use strict';
+
 const router = require('express').Router();
 const passport = require('passport');
 
@@ -19,7 +21,8 @@ router.get('/google', passport.authenticate('google', {
 
 //callback route for google redirect
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-  res.send(req.user);
+  //res.send(req.user);
+  res.redirect('/profile/');
 })
 
 module.exports = router;
