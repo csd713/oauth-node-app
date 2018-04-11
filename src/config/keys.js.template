@@ -1,0 +1,15 @@
+//Add your keys here
+//Rename this file to 'keys.js'
+
+module.exports = {
+	google: {
+		clientID: '<your googleID>',
+		clientSecret: '<your clientSecret>'
+	},
+	mongoDb: {
+		dbURI: '<your mongoDb URL>'
+	},
+	session: {
+		cookieKey: '<your cookieKey>'
+	}
+}
