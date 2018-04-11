@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     userName: String,
-    googleId: String
+    googleId: String,
+    thumbnail: String
 });
 
 //mongodb will pluralize this for us - users collection
